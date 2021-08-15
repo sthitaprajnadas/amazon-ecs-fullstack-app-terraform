@@ -219,3 +219,69 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 
 ## License
 This library is licensed under the MIT-0 License. See the [LICENSE](LICENSE) file.
+
+--------------------------------------------------------------------------------------------------------------------------  
+
+## Terraform creation
+
+### Create VPC 
+- Call networking module  
+
+### Create target groups
+- Create target_group_server_blue by calling ALB module  
+- Create target_group_server_green by calling ALB module  
+- Create target_group_client_blue by calling ALB module  
+- Create target_group_client_green by calling ALB module  
+
+### Create security group for ALBs
+- Create security_group_alb_server by calling SecurityGroup module  
+- Create security_group_alb_client by calling SecurityGroup module  
+
+### Create ALBs  
+- Create alb_server by calling ALB module
+- Create alb_client by calling ALB module
+
+### Create ECS role and policy  
+- Create ECS role by calling IAM module
+- Create ECS role policy by calling IAM module  
+
+### Create ECR repos  
+- Create repo for server by ECR module  
+- Create repo for client by ECR module  
+
+### Create ECS task def  
+- Create task def for Server by TaskDef module
+- Create task def for client  by TaskDef module 
+
+### Create security group for ECS tasks  
+- Create sec group for server ECS task  
+- Create sec group for client ECS task  
+
+### Create ECS cluster  
+
+### Create ECS service  
+- Create ECS service for server  
+- Create ECS service for client  
+
+### Create Autoscaling 
+- For server by calling Autoscaling module  
+- For client by calling Autoscaling module  
+
+### Create S3 bucket for Codepipeline    
+
+### Create Codedeploy role,devops role  
+
+### Create SNS topic by SNS module  
+
+### Create Codebuild Server  
+### Create Codebuild Client  
+
+### Create Codebuild server   
+### Create Codebuild client 
+
+### Create Codepiepline
+
+### Create DynamoDB table by calling Dynamodb module
+
+
+
